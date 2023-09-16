@@ -1,1 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/be_learning
+    username: postgres
+    password: zhassurbek
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  # security
+  security:
+    user:
+      name: administrator
+      password: password
+
+server:
+  port: 8085
+
+
+# swagger
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

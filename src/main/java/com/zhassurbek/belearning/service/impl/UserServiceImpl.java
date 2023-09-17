@@ -2,7 +2,7 @@ package com.zhassurbek.belearning.service.impl;
 
 import com.zhassurbek.belearning.BeLearningApplication;
 import com.zhassurbek.belearning.repository.UserRepository;
-import com.zhassurbek.belearning.model.User;
+import com.zhassurbek.belearning.model.security.User;
 import com.zhassurbek.belearning.service.UserService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

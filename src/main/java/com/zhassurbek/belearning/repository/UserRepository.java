@@ -1,6 +1,6 @@
 package com.zhassurbek.belearning.repository;
 
-import com.zhassurbek.belearning.model.User;
+import com.zhassurbek.belearning.model.security.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

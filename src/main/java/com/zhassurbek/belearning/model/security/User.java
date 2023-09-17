@@ -1,5 +1,6 @@
-package com.zhassurbek.belearning.model;
+package com.zhassurbek.belearning.model.security;
 
+import com.zhassurbek.belearning.model.Posts;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -45,6 +46,17 @@ public class User implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+
+    @OneToMany(mappedBy = "author")
+    private List<Posts> posts;
+
+
+
+
+
+
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

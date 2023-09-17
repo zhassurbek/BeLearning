@@ -1,6 +1,6 @@
 package com.zhassurbek.belearning.service;
 
-import com.zhassurbek.belearning.model.User;
+import com.zhassurbek.belearning.model.security.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;

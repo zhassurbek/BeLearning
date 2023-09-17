@@ -3,6 +3,7 @@ package com.zhassurbek.belearning.controller;
 import com.zhassurbek.belearning.model.Posts;
 import com.zhassurbek.belearning.service.PostsService;
 import com.zhassurbek.belearning.service.security.JwtService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,16 @@ public class PostsController {
         } catch (Exception e) {
             e.printStackTrace();
             return (ResponseEntity<Posts>) ResponseEntity.badRequest();
+        }
+    }
+
+    @PostMapping("/post-increment-view")
+    public ResponseEntity incrementView(@RequestParam Long postId) {
+        try {
+            return new ResponseEntity(postsService.incrementViews(postId), HttpStatus.OK);
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();
+            return new ResponseEntity(0, HttpStatus.NOT_FOUND);
         }
     }
 

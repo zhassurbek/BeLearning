@@ -14,6 +14,19 @@ spring:
       name: administrator
       password: password
 
+  #????????????? ????? ????? ???????????
+#  mail:
+#    host: localhost
+#    port: 1025
+#    properties:
+#      mail:
+#      smtp:
+#      starttls:
+#      enable: false
+#    username:
+#    password:
+
+
 server:
   port: 8085
 
@@ -32,3 +45,4 @@ springdoc:
 token:
   singing:
     key: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351
+

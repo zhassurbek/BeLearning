@@ -1,7 +1,6 @@
 package com.zhassurbek.belearning.controller;
 
 import com.zhassurbek.belearning.model.Posts;
-import com.zhassurbek.belearning.model.security.User;
 import com.zhassurbek.belearning.service.PostsService;
 import com.zhassurbek.belearning.service.security.JwtService;
 import lombok.RequiredArgsConstructor;
@@ -32,14 +31,14 @@ public class PostsController {
         }
     }
 
-//    @PostMapping("/create-post")
-//    public ResponseEntity<Posts> createPost(@RequestBody Posts posts, @RequestHeader("Authorization") String authorizationHeader) {
-//        // извлекаем токен из заголовки Authorization
-//        String token = authorizationHeader.replace("Bearer", "");
-//
-//        // Расшифровываем и проверяем токен, чтобы получить информацию о текущем пользователе
-//        User user = jwtService.
-//
-//    }
+    @PostMapping("/create-post")
+    public ResponseEntity<Posts> createPost(@RequestBody Posts posts) {
+        try {
+            return ResponseEntity.ok(postsService.createPost(posts));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return (ResponseEntity<Posts>) ResponseEntity.badRequest();
+        }
+    }
 
 }

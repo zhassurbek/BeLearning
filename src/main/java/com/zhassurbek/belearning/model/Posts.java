@@ -20,7 +20,7 @@ import java.util.List;
 public class Posts extends BaseEntity {
 
     private Long views;
-    private Boolean isActive;
+//    private Boolean isActive;
     // время чтения
     private Long readingTime;
     // уровень сложности статьи
@@ -28,9 +28,10 @@ public class Posts extends BaseEntity {
 
 
     // todo
-    @ManyToOne
-    @JoinColumn(name = "author_id", referencedColumnName = "id")
-    private User author;
+//    @ManyToOne
+//    @JoinColumn(name = "author_id", referencedColumnName = "id")
+//    private User author;
+    private Long authorId;
 
 
     private List<String> themes;

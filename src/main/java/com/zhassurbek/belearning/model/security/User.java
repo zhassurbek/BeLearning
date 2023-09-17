@@ -48,8 +48,8 @@ public class User implements UserDetails {
     private Role role;
 
 
-    @OneToMany(mappedBy = "author")
-    private List<Posts> posts;
+//    @OneToMany(mappedBy = "author")
+//    private List<Posts> posts;
 
 
 
@@ -87,5 +87,19 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        // Избегаем вывода поля posts, чтобы предотвратить циклическую зависимость
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", confirmedUser=" + confirmedUser +
+                ", role=" + role +
+                '}';
     }
 }

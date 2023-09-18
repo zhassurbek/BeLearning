@@ -1,10 +1,7 @@
 package com.zhassurbek.belearning.model;
 
 import com.zhassurbek.belearning.model.common.abstractentities.BaseEntity;
-import com.zhassurbek.belearning.model.security.User;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,6 +15,9 @@ import java.util.List;
 @Entity
 @Table(name = "posts", schema = "content")
 public class Posts extends BaseEntity {
+
+    private String title;
+    private String subtitle;
 
     private Long views;
 //    private Boolean isActive;
